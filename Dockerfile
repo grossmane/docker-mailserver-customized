@@ -1,8 +1,8 @@
 FROM tvial/docker-mailserver:2.1
 MAINTAINER Jens Grossmann <grossmane@users.noreply.github.com>
 
-ENV http_proxy http://proxy:8080
-ENV https_proxy http://proxy:8080
+#ENV http_proxy http://proxy:8080
+#ENV https_proxy http://proxy:8080
 
 RUN apt-get -qq update
 RUN apt-get install -qq dovecot-mysql vim
@@ -27,8 +27,8 @@ COPY postfix/mysql-virtual-mailbox-maps.cf /etc/postfix/mysql-virtual-mailbox-ma
 COPY postfix/mysql-virtual-system-alias-maps.cf /etc/postfix/mysql-virtual-system-alias-maps.cf
 COPY postfix/mysql-virtual-verteiler-alias-maps.cf /etc/postfix/mysql-virtual-verteiler-alias-maps.cf
 
-ENV http_proxy=""
-ENV https_proxy=""
+#ENV http_proxy=""
+#ENV https_proxy=""
 
 COPY ./start-mailserver-customized.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/*
