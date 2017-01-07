@@ -5,7 +5,7 @@ MAINTAINER Jens Grossmann <grossmane@users.noreply.github.com>
 #ENV https_proxy http://proxy:8080
 
 RUN apt-get -qq update
-RUN apt-get install -qq dovecot-mysql vim
+RUN apt-get install -qq dovecot-mysql postfix-mysql vim
 
 RUN sed -i -e '/\!include auth-sql\.conf\.ext/s/^#//' /etc/dovecot/conf.d/10-auth.conf
 
