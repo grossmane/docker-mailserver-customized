@@ -1,0 +1,7 @@
+hosts = %%MYSQL_HOST%%
+user = %%MYSQL_USERNAME%%
+password = %%MYSQL_PASSWORD%%
+dbname = %%MYSQL_DBNAME%%
+table = protected_users
+select_field = class
+where_field = recipient

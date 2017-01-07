@@ -1,0 +1,5 @@
+hosts = %%MYSQL_HOST%%
+user = %%MYSQL_USERNAME%%
+password = %%MYSQL_PASSWORD%%
+dbname = %%MYSQL_DBNAME%%
+query = SELECT email FROM view_mailbox_users WHERE email='%s'

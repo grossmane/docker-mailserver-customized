@@ -1,0 +1,5 @@
+hosts = %%MYSQL_HOST%%
+user = %%MYSQL_USERNAME%%
+password = %%MYSQL_PASSWORD%%
+dbname = %%MYSQL_DBNAME%%
+query = SELECT destination FROM view_alias_users WHERE email='%s'

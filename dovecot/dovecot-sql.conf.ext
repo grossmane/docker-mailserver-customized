@@ -1,0 +1,4 @@
+driver = mysql
+connect = host=%%MYSQL_HOST%% dbname=%%MYSQL_DBNAME%% user=%%MYSQL_USERNAME%% password=%%MYSQL_PASSWORD%%
+default_pass_scheme = %%MYSQL_DEFAULT_PASS_SCHEME%%
+password_query = SELECT email as user, password FROM view_mailbox_users WHERE email='%u';
