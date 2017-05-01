@@ -1,4 +1,4 @@
-FROM tvial/docker-mailserver:2.2
+FROM tvial/docker-mailserver:2.1
 MAINTAINER Jens Grossmann <grossmane@users.noreply.github.com>
 
 #ENV http_proxy http://proxy:8080
