@@ -1,4 +1,4 @@
-FROM tvial/docker-mailserver:2.1
+FROM tvial/docker-mailserver:2.3
 MAINTAINER Jens Grossmann <grossmane@users.noreply.github.com>
 
 #ENV http_proxy http://proxy:8080
@@ -8,6 +8,8 @@ RUN apt-get -qq update
 RUN apt-get install -qq dovecot-mysql postfix-mysql vim
 
 RUN sed -i -e '/\!include auth-sql\.conf\.ext/s/^#//' /etc/dovecot/conf.d/10-auth.conf
+
+RUN sed -i 's/^ignoreip = 127.0.0.1\/8/ignoreip = 127.0.0.1\/8 radicale roundcube cloud/' /etc/fail2ban/jail.conf
 
 COPY dovecot/conf.d/auth-sql.conf.ext /etc/dovecot/conf.d/
 COPY dovecot/dovecot-sql.conf.ext /etc/dovecot/dovecot-sql.conf.ext
